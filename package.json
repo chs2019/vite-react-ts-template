@@ -9,10 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "vitest",
-    "test:run": "vitest run --reporter=default",
+    "test": "vitest run",
     "test:ui": "vitest --ui --coverage",
-    "test:coverage": "vitest run --coverage --reporter=default"
+    "test:coverage": "vitest run --coverage --reporter=default",
+    "commit": "commit"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/prompt-cli": "^19.4.0",
     "@eslint/js": "^9.9.0",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
