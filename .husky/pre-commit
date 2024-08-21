@@ -1,5 +1,5 @@
 #!/bin/sh
 
 npm run lint
-npm test:run
+npm run test:run
 npm run build
