@@ -1,12 +1,14 @@
-# Rules for conventional commits
+# Semver with conventional commits and Release Please
+
+**Conventional commits** and **release please** automate changelog creation.
+
+## Commit mesage format
 
 Start interactive `@commitlint/prompt-cli` with
 
 ```bash
 npm run commit
 ```
-
-## Commit message format
 
 ```txt
 <type>(<scope>): <subject>
@@ -20,15 +22,19 @@ The footer should contain a closing reference to an issue if any.
 
 ## Type
 
+(In **bold** the types relevant to Release Please)
+
 - build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
 - ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
 - docs: Documentation only changes
-- feat: A new feature
-- fix: A bug fix
+- **feat**: A new feature
+- **fix**: A bug fix
 - perf: A code change that improves performance
 - refactor: A code change that neither fixes a bug nor adds a feature
 - style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 - test: Adding missing tests or correcting existing tests
+
+Adding a **!** as in **feat!**, **fix!**, **refactor!** indicaets a breaking change and will increment the SemVer major version.
 
 ## Scope (optional)
 
@@ -87,3 +93,5 @@ After: ...
 ```
 
 [Source: Angular project](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.uyo6cb12dt6w)
+
+## Release Please
