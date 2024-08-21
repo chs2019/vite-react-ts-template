@@ -1,13 +1,26 @@
-name: integration-build
+name: CI build and test
 on: 
     push:
-        branches: [main]
+        branches: [$default-branch]
+    pull_request:
+        branches: [$default-branch]
 
 jobs:
     build:
+
         runs-on: ubuntu-latest
+
         steps:
-            - name: test-step
-              run: echo "Hello World!"
+        - uses: actions/checkout@v4
+        - name: Use Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22.x
+            cache: "npm"
+        - run: npm ci
+        - run: npm build --if-present
+        - run: npm test
+
+
 
             
